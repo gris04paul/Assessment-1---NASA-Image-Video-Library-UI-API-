@@ -1,0 +1,66 @@
+
+# ✅ 4. Flaky Behavior Notes
+
+Create file: `FLAKY_NOTES.md`
+
+```md
+# Flaky Behavior & Mitigation
+
+## ⚠️ Observed Flaky Areas
+
+### 1. Image Visibility
+- Some images are present but not visible immediately
+
+✅ Mitigation:
+- Avoided generic locators like `img.first()`
+- Used visibility checks
+
+---
+
+### 2. Navigation to Details Page
+- Clicking first result sometimes did not navigate properly
+
+✅ Mitigation:
+- Used `waitForURL('**/details/**')`
+- Ensured element is visible before click
+
+---
+
+### 3. NASA ID Extraction
+- URL sometimes contains query params
+
+Example:
+
+PIA12345?search=moon
+
+
+✅ Mitigation:
+- Cleaned ID using:
+
+split('?')[0]
+
+
+---
+
+### 4. API Response Issues
+- Invalid NASA ID caused API failure
+
+✅ Mitigation:
+- Added validation before API call
+- Added error handling for missing fields
+
+---
+
+### 5. Dynamic Content Loading
+- Results take time to load
+
+✅ Mitigation:
+- Used Playwright auto-wait
+- Added explicit waits where required
+
+---
+
+## 🚀 Improvements (Future)
+- Add retry logic
+- Add network mocking
+- Add more stable selectors (data-testid)
