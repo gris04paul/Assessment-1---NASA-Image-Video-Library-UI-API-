@@ -23,3 +23,18 @@ It includes:
 ```bash
 npm install
 npx playwright install
+
+
+Run Tests
+
+Run All Tests
+npx playwright test
+
+Run UI Tests
+npx playwright test tests/ui
+
+Run API Tests
+npx playwright test tests/api
+
+Run Integration Tests
+npx playwright test tests/integration
