@@ -1,0 +1,20 @@
+{
+  "name": "nasa-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    
+    "test": "npx playwright test",
+    "ui": "npx playwright test tests/ui",
+    "api": "npx playwright test tests/api",
+    "integration": "npx playwright test tests/integration",
+    "report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}
