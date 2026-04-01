@@ -10,7 +10,6 @@ class NasaPage {
   }
 
   async selectOnlyImages() {
-  //const images = this.page.getByRole('checkbox', { name: 'Images' });
   const videos = this.page.getByRole('checkbox', { name: 'Videos' }).first();
   const audio = this.page.getByRole('checkbox', { name: 'Audio' }).first();
 
@@ -21,20 +20,6 @@ class NasaPage {
   await audio.click();
 
 
-  // Ensure Images is selected
-  /*if (!(await images.getAttribute('aria-pressed'))) {
-    await images.click();
-  }
-
-  // Unselect Videos if selected
-  if (await videos.getAttribute('aria-pressed')) {
-    await videos.click();
-  }
-
-  // Unselect Audio if selected
-  if (await audio.getAttribute('aria-pressed')) {
-    await audio.click();
-  }*/
 }
 
   async search(term) {
@@ -63,17 +48,13 @@ console.log('Total images:', count);
 
   await results.first().focus();
   await this.page.keyboard.press('Enter');
-  //await this.page.waitForURL('**/details/**');
+  
 }
 
   async validateDetails() {
-    //await this.page.waitForLoadState('networkidle');
-    //await expect(this.page.locator('h1')).toBeVisible();
     const image = this.page.locator('img').first();
-    //await expect(image).toBeVisible();
-
-    const titleLocator = this.page.locator('h1');
-  await expect(titleLocator).toBeVisible();
+   const titleLocator = this.page.locator('h1');
+   await expect(titleLocator).toBeVisible();
 
   // Get and print title
   const title = await titleLocator.innerText();
@@ -94,7 +75,7 @@ console.log('Total images:', count);
   const url = this.page.url();
   console.log('Current URL:', url);
 
-  // Case 1: URL contains /details/{id}
+  
   if (url.includes('/details/')) {
     const idPart = url.split('/details/')[1];
     if (idPart) {
@@ -102,26 +83,25 @@ console.log('Total images:', count);
     }
   }
 
-  // ❗ Case 2: fallback → try extracting from page
+  
   const nasaIdElement = this.page.locator('text=/NASA ID/i');
 
   if (await nasaIdElement.isVisible()) {
     const text = await nasaIdElement.innerText();
     console.log('NASA ID Text:', text);
 
-    // Example: "NASA ID: PIA12235"
+    
     const match = text.match(/NASA ID:\s*(\S+)/i);
     if (match) {
       return match[1];
     }
   }
 
-  // ❌ If nothing works
+ 
   return null;
 }
 }
   
-
 
 module.exports = { NasaPage };
 
