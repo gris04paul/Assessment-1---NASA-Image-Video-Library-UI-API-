@@ -26,16 +26,7 @@ class ApiHelper {
 
     console.log('Status:', response.status());
 
-   /* const data = await response.json();
-
-    // ✅ SAFETY CHECK
-    if (!data.collection || !data.collection.items) {
-      throw new Error(`Invalid API response for NASA ID: ${nasaId}`);
-    }
-
-    console.log('Asset Links Count:', data.collection.items.length);
-
-    return data;*/
+   
   }
 }
 
