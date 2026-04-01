@@ -27,9 +27,6 @@ npx playwright install
 
 Run Tests
 
-Run All Tests
-npx playwright test
-
 Run UI Tests
 npx playwright test tests/ui
 
