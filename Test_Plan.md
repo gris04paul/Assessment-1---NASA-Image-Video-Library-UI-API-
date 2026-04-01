@@ -20,7 +20,7 @@ To validate UI functionality, API responses, and ensure consistency between UI a
 ### Integration Testing
 - Extract NASA ID from UI
 - Fetch data from API
-- Compare UI title with API title
+
 
 ---
 
