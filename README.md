@@ -2,7 +2,7 @@
 
 # NASA Image Library Automation (Playwright)
 
-## 📌 Overview
+## Overview
 This project automates UI and API testing for NASA Image & Video Library.
 
 It includes:
@@ -12,13 +12,13 @@ It includes:
 
 ---
 
-## ⚙️ Prerequisites
+## Prerequisites
 - Node.js installed
 - Git installed
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install
