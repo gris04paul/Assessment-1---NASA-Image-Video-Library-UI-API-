@@ -9,9 +9,7 @@ test('Task - A - UI - Search and validate moon images', async ({ page }) => {
   await nasa.search('moon');
   await page.waitForTimeout(4000);
   await nasa.validateResults();
-  await page.waitForTimeout(6000);
   await nasa.openFirstResult();
- 
   await nasa.validateDetails();
   
 });
